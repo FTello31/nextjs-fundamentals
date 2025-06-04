@@ -20,6 +20,8 @@ A project management application built with Next.js, inspired by Linear.
 
 ## Getting Started
 
+![alt text](image.png)
+
 ### Prerequisites
 
 - Node.js 16+ and npm/yarn
@@ -48,6 +50,8 @@ A project management application built with Next.js, inspired by Linear.
    cp .env.example .env.local
    ```
 
+   https://www.instagres.com/
+
 4. Set up your database and update the `DATABASE_URL` in `.env.local`
 
 5. Run database migrations
@@ -74,6 +78,20 @@ A project management application built with Next.js, inspired by Linear.
 - `lib/` - Utility functions and libraries
 - `prisma/` - Database schema and client
 
-## License
+static routes
+static information, dont change, nextjs prerendered this.
 
-This project is licensed under the MIT License.
+dynamic routes
+typical have parameter on it
+
+layouts
+components that wrap pages and nnever change
+layouts always inherits from another lyaout
+
+route group
+
+## Styling
+
+use tailwind
+
+## 05 static pages
