@@ -95,3 +95,52 @@ route group
 use tailwind
 
 ## 05 static pages
+
+'use client' is a directive. react feature: regular SPA application client side React.
+
+this is how static pages works
+
+![alt text](image-1.png)
+
+this happens because
+
+PAGES(static non static) are not rendered or execute(compiled) it by Next.js until I visit it in DEV mode (takes a while the first time, then it is ok to go)
+
+static pages: regula rpages that dont fetch data or any dynamic data / not personalized to the user is looking at it
+should be heavily optimized
+
+if you want to prerender a lot of static pages (like 50 blog post, -> that they are not going to change)
+you should use https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes#generating-static-params
+
+## 06 Server Actions / server functions
+
+Async function that gets called on the server, but usually initiated in some interaction
+something in the client happens and then the server action gets fired
+
+is a more streamline way to create API routes without actually make api routes
+
+Zod is a runtime schemas -> we can check an schema in runtime and gert an error or not
+
+yuo should have form validation on the cliente and also in the route
+
+### in actions/auth.ts
+
+'use server' directive
+
+every action that gets exported, is essentially an api route -> get bundled with the serverwith the server modules and not with the client modules
+
+because this functions are about to execute on the server, means that they dont have cces to the window, thing on the client
+
+you access server things on this files.
+
+## 07 Auth forms server ations and react hook useActionState
+
+we will use the server actions created, calling a
+when you import the server actin to your client co ponent, what you are inporting is the handler (not the function itself)
+
+no control input, not keep tracing load state,
+it gives us the status, state of inputs
+
+in signup:
+add 'use client'
+to be able to use hooks
