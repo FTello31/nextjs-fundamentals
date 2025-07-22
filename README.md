@@ -162,8 +162,7 @@ is the first thing is get execute that user goes to a route that is a server com
 
 SERVER ACTIONS are API routes that respond to a some interactions on the client
 
-SERVER ACTIONS or functions is node code that is exposed by nextjs over http
-data layer is native node code that never leaves the server
+### _SERVER ACTIONS or functions is node code that is exposed by nextjs over http data layer is native node code that never leaves the server_
 
 in lib/auth.ts
 that node code is reading the headers that came in the request
@@ -178,3 +177,40 @@ wrap it into a Suspense --- fallback -> is the loading page.
 Next.js is actively developing features to improve data fetching and caching in Server Components. Features like `dynamicIO`, currently available in the canary channel, offer more granular control over caching behavior. With `dynamicIO` enabled, Next.js, by default, will throw an error if a Server Component fetches data _without_ being wrapped in a `<Suspense>` boundary or utilizing the `use cache` directive. To handle dynamic data fetching during development, wrap the component fetching the data in `<Suspense>`. This opts that component out of caching, ensuring you always see the latest data.
 
 use the suspense for developing , then decided what do you want to cache
+
+other way instead of using Suspense, you can create a loading.tsx, where you place the thing you put on the fallback
+![alt text](image-3.png)
+
+## 09 Creating New Issues with Server Actions
+
+actions/issues.ts
+there is a server action : createIssue -> takes in the data (IssueData), get the current user
+
+then inside of the page of the new issue: issues/new/page.tsx -> we suspense the newIssue Component (becauase is async, waiting for the current user to finish fetching )
+
+after fetching finished we show IssueForm.tsx clientside component. use the useActionState hook and called the server action we created : createIssue
+
+## 10 editing and deleting,
+
+using server actions without a action state hook and without using forms
+get the id out of the params
+
+all pages have access to the request through the props by default
+and also you can get access to the params
+
+    notFound() fn -> redirects to the 404 next.js page
+
+## 11 lesson caching memoizing data
+
+use cache
+unstable cache tag('id')
+
+revalidateTag ('id')
+
+memoizing
+a function have been call with specific inputs
+if you want to run it more times. only the first time will suffer, the next ones will be cached.
+
+the use of memoizing only have sense in components rendering (loading a page)
+
+in develpment mode components are called twice,
