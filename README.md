@@ -214,3 +214,67 @@ if you want to run it more times. only the first time will suffer, the next ones
 the use of memoizing only have sense in components rendering (loading a page)
 
 in develpment mode components are called twice,
+
+## 12 API ROUTES
+
+create a folder "api" inside the folder app
+define folder names -> to be the path name of the request.
+then create the route.ts file
+so: api/ user / route.ts
+
+as Next js is a fullstack framework
+so basically is a server side component, if you hit that endpoint with postman it will return a response.
+
+## 13 middleware
+
+middleware: something that sits in the middle between a requester and something that serve the request
+It sits between the client and your Next.js application, enabling you to modify responses, redirect users, rewrite URLs, or add headers based on incoming requests.
+in case of next js, is in the network layer
+
+nextUrl -> is the next URL you are going to ( la siguiente)
+
+## 14 edge func
+
+the code run here has to be lightweight and fast. It has limitations
+
+the code in the middleware automatically runs on the edge runtime
+
+middleware locally will work becuase is running on your computer, but when you deployed is run in the edge, so mybe will fail
+
+there is edge config.
+
+if you can interact with somethig over http, you most likely to be able to use it on the edge
+
+## 15 deployment on vercel
+
+## 16 vitest unit test
+
+/test/page.test.tsx
+
+## mis
+
+https://magicui.design/
+aceternity UI
+uiverse
+
+# 21st dev
+
+mobbin
+
+upstash - workflows
+
+trigger.dev - background jobs
+
+inngest
+
+neon
+
+next js SPA (static exports )
+
+fluid compute vercel
+
+https://vercel.com/fluid
+
+serverles databases
+
+https://github.com/Hendrixer/next.js-fundamentals/tree/main
